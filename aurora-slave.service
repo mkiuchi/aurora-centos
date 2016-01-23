@@ -1,0 +1,14 @@
+[Unit]
+Description=Aurora Slave
+After=mesos-slave.service
+Wants=mesos-slave.service
+
+[Service]
+ExecStart=/usr/local/sbin/auroraThermosObserver.sh start
+Restart=always
+RestartSec=20
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
+

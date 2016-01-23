@@ -1,0 +1,6 @@
+# Apache Aurora Configuration
+
+CLUSTERNAME=mkcluster
+LIBPROCESS_PORT=8083
+LIBPROCESS_IP=192.168.0.10
+
