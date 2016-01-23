@@ -1,0 +1,14 @@
+[Unit]
+Description=Aurora Master
+After=mesos-master.service
+Wants=mesos-master.service
+
+[Service]
+ExecStart=/usr/local/sbin/auroraScheduler.sh start
+Restart=always
+RestartSec=20
+LimitNOFILE=16384
+
+[Install]
+WantedBy=multi-user.target
+
