@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-env AURORA_HOME=$PWD/../aurora
-echo $AURORA_HOME
+AURORA_HOME=$HOME/aurora
 
 cd $AURORA_HOME
 mkdir third_party
@@ -12,11 +11,11 @@ cd $AURORA_HOME
 sudo cp dist/kaurora_admin.pex /usr/local/bin/aurora_admin
 
 ./pants binary src/main/python/apache/aurora/kerberos:kaurora
-cp dist/kaurora.pex /usr/local/bin/aurora
+sudo cp dist/kaurora.pex /usr/local/bin/aurora
 
 CLASSPATH_PREFIX=dist/resources/main ./gradlew installDist
-mkdir -p /var/db/aurora /var/lib/aurora/backups
+sudo mkdir -p /var/db/aurora /var/lib/aurora/backups
 
-rm -rf /usr/local/aurora/master /var/db/aurora/*
-mesos-log initialize --path="/var/db/aurora"
+sudo rm -rf /usr/local/aurora/master /var/db/aurora/*
+sudo mesos-log initialize --path="/var/db/aurora"
 
