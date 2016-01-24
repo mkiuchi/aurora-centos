@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
+sudo rpm -ivh http://ftp.iij.ad.jp/pub/linux/fedora/epel/7/x86_64/e/epel-release-7-5.noarch.rpm
+sudo yum -y install unzip wget python-pip python-devel thrift java-1.8.0-openjdk-devel krb5-devel
+sudo yum -y groupinstall ‘Development Tools’
+
 AURORA_HOME=$HOME/aurora
 
 cd $AURORA_HOME
